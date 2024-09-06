@@ -1,0 +1,225 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #0d0d0d;
+    color: #00ffea;
+    overflow-x: hidden;
+    line-height: 1.6;
+    perspective: 1000px;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 2px solid #00ffea;
+}
+
+header h1,
+header h2 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    color: #00ffea;
+    position: relative;
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 40px #00ffea, 0 0 80px #00ffea;
+    animation: glitch-animation 2s infinite alternate-reverse;
+}
+
+@keyframes glitch-animation {
+    0% { transform: skewX(10deg); }
+    10% { transform: skewX(-10deg); }
+    20%, 80% { transform: skewX(0deg); }
+    30% { transform: translate(-2px, 2px); }
+    40%, 70% { transform: translate(2px, -2px); }
+    50% { transform: skewY(-10deg); }
+}
+
+/* Neon Title */
+.neon-title {
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 40px #00ffea, 0 0 80px #00ffea;
+    color: #00ffea;
+    margin-bottom: 20px;
+}
+
+/* Holo Section */
+.holo-section {
+    background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(15,15,15,0.9));
+    border: 2px solid #00ffea;
+    padding: 50px 0;
+    margin: 50px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffea;
+    transform: rotateX(5deg);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) rotateX(20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(5deg);
+    }
+}
+
+.holo-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill {
+    margin: 20px;
+    text-align: center;
+    color: #00ffea;
+    transition: transform 0.3s ease;
+}
+
+.skill i {
+    font-size: 3rem;
+    color: #00ffea;
+}
+
+.skill:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Projects Section */
+.project {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.project h4 {
+    color: #00ffea;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #bbb;
+}
+
+/* Contact Section */
+.contact-info {
+    list-style: none;
+    text-align: center;
+}
+
+.contact-info li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffea;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 2px solid #00ffea;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+/* Navigation Bar */
+.nav-bar {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar ul li {
+    margin: 0 20px;
+}
+
+.nav-bar ul li a {
+    color: #00ffea;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Glowing hover effect */
+.nav-bar ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 40px #00ffea;
+}
+
+/* Active link effect */
+.nav-bar ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #00ffea;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-bar ul li a:hover:after {
+    width: 100%;
+    left: 0;
+}
+

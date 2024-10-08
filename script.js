@@ -57,6 +57,7 @@ init();
 // GSAP animations for scrolling effects
 gsap.from(".glitch", { duration: 2, opacity: 0, y: 50, ease: "power2.out" });
 gsap.from(".neon-title", { duration: 1.5, opacity: 0, x: -100, ease: "power2.out" });
+gsap.from(".project", { duration: 2, opacity: 0, y: 50, ease: "power2.out", stagger: 0.5 });
 
 // Responsive handling for Three.js renderer
 window.addEventListener('resize', () => {
